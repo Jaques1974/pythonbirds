@@ -9,6 +9,13 @@ class Pessoa:
     def cumprimentar(self):   #--->'cumprimentar' aqui, é chamado de Método(que definimos chamando a função 'def'), que
         return f'Ola {id(self)}'  #é uma espécie de atributo da classe Pessoa.
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
 
 if __name__ == '__main__':
     renzo = Pessoa(nome='renzo') #--->Os filhos do objeto 'luciano' é um atributo complexo.Então para sermos bem especí-
@@ -31,4 +38,5 @@ if __name__ == '__main__':
     print(luciano.olhos)
     print(renzo.olhos)
     print(id(Pessoa.olhos), id(luciano.nome), id(renzo.nome))
-
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
